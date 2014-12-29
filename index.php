@@ -22,8 +22,8 @@
 
 <body <?php body_class(); ?>>
 
-<a class="shift" id="goarchive"><span class="vertcontainer"><span class="vertcenter">&gt;</span></span></a>
-<a class="shift" id="gopost"><span class="vertcontainer"><span class="vertcenter">&lt;</span></span></a>
+<a class="shift" id="goarchive"><span class="vertcenter">&gt;</span></a>
+<a class="shift" id="gopost"><span class="vertcenter">&lt;</span></a>
 
 <div id="blogheader" class="sticky">
 	<h1>
@@ -106,7 +106,7 @@
 			$archive.hide('slide', {
 				direction: 'right'
 			}, 600, function () {
-				$post.scrollTop(0);
+				$post.scrollTop(1);
 				$post.show('slide', {
 					direction: 'left'
 				}, 600);
@@ -127,7 +127,7 @@
 				$archive.hide('slide', {
 					direction: 'right'
 				}, 600, function () {
-					$post.scrollTop(0);
+					$post.scrollTop(1);
 					$goarchive.fadeIn(300);
 					$post.show('slide', {
 						direction: 'left'
@@ -182,7 +182,19 @@
 		    //This only fires when the user swipes right
 		  }
 		});
-
+		$(window).scroll(function() {
+			var scrollMargin = 15
+		   if($(window).scrollTop() < scrollMargin 
+		   	|| $(document).height() - ($(window).scrollTop() + $(window).height()) < scrollMargin) {
+		       // show the scroll
+		   		$("#goarchive").addClass("slideleftborder");
+		   		$("#gopost").addClass("sliderightborder")
+		   } else {
+		   		$("#goarchive").removeClass("slideleftborder");
+		   		$("#gopost").removeClass("sliderightborder")
+			}
+		});
+		$(window).scrollTop(1);
 	});
 
 </script>
