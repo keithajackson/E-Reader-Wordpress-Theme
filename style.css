@@ -166,9 +166,6 @@ nav a:hover {
 	opacity: 0.9;
 	margin: 0;
 	padding: 20px 0 20px 0;
-	border-top-style: dashed;
-	border-top-width: 2 px;
-	border-top-color: #CCC;
 }
 
 /*
@@ -229,6 +226,10 @@ ul#content-container > li {
 	overflow: auto;
 }
 
+#content-container .content {
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
 /*
 ########   #######   ######  ######## 
 ##     ## ##     ## ##    ##    ##    
@@ -240,9 +241,8 @@ ul#content-container > li {
 */
 
 #post .content {
-	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 3px solid rgba(0,0,0,0.1);
 }
-
 
 #post ol, #post ul {
 	padding: 0 0 0 18px;
