@@ -3,7 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php echo get_bloginfo('name'); ?></title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
 
@@ -22,8 +22,8 @@
 
 <body <?php body_class(); ?>>
 
-<a class="shift" id="goarchive">&rarr;</a>
-<a class="shift" id="gopost">&larr;</a>
+<a class="shift" id="goarchive"><span class="vertcontainer"><span class="vertcenter">&gt;</span></span></a>
+<a class="shift" id="gopost"><span class="vertcontainer"><span class="vertcenter">&lt;</span></span></a>
 
 <div id="blogheader" class="sticky">
 	<h1>
