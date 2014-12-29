@@ -1,0 +1,14 @@
+/*
+pre {
+
+	font-size: 2em;
+
+	line-height: 22px;
+
+	margin: 0 0 22px 0;
+
+	font-family: "Courier New", Courier, monospace;
+
+	white-space: pre-line;	
+}
+*/
