@@ -22,8 +22,8 @@
 
 <body <?php body_class(); ?>>
 
-<a class="shift" id="goarchive"><span class="vertcenter">&gt;</span></a>
-<a class="shift" id="gopost"><span class="vertcenter">&lt;</span></a>
+<a class="shift" id="goarchive"><span class="vertcenter">&raquo;</span></a>
+<a class="shift sliderightborder" id="gopost"><span class="vertcenter">&laquo;</span></a>
 
 <div id="blogheader" class="sticky">
 	<h1>
@@ -48,7 +48,19 @@
             <h1><?php the_title(); ?></h1>
             
             <?php the_content(); ?>
-		</div>
+            <div class="links-hr"></div>
+	        <div class="links">
+	            <?php
+	            if(has_previous_posts()) {
+	            	previous_post_link('<div class="prev">previous: %link</div>');
+	            } ?>
+	            <?php
+	            if(has_next_posts()) {
+	             	next_post_link('<div class="next">next: %link</div>');
+	            }
+	            ?>
+			</div>
+        </div>
 
 		<div id="footer" class="sticky">
 			btw: jacke can be
@@ -68,7 +80,7 @@
 				while ($my_query->have_posts()) :
 					$my_query->the_post();
 				?>
-					<li><h2><a rel="<?php the_permalink(); ?>" id="<?php the_id(); ?>" title="<?php echo( basename( get_permalink() ) ); ?>"><?php the_title(); ?></a></h2> <span><?php the_time('F j Y') ?></span></li>
+					<li><h2><a href="<?php the_permalink(); ?>" id="<?php the_id(); ?>" title="<?php echo( basename( get_permalink() ) ); ?>"><?php the_title(); ?></a></h2> <span><?php the_time('F j Y') ?></span></li>
 				<?php endwhile; wp_reset_postdata(); ?>
 			</ul>
 
@@ -80,124 +92,7 @@
 
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/jquery.touchSwipe.min.js"></script>
-<script>
-	$(document).ready(function () {
-		// Cached DOM references
-		var $goarchive = $('#goarchive'),
-			$gopost = $('#gopost'),
-			$archive = $('#archive'),
-			$post = $('#post');
-
-		function goarchive() {
-			$goarchive.fadeOut(300);
-			$post.hide('slide', {
-				direction: 'left'
-			}, 600, function () {
-				$archive.scrollTop(0);
-				$archive.show('slide', {
-					direction: 'right'
-				}, 600);
-				$gopost.fadeIn(300);
-			});
-		};
-
-		function gopost() {
-			$gopost.fadeOut(300);
-			$archive.hide('slide', {
-				direction: 'right'
-			}, 600, function () {
-				$post.scrollTop(1);
-				$post.show('slide', {
-					direction: 'left'
-				}, 600);
-				$goarchive.fadeIn(300);
-			});
-		};
-
-		function loadpost() {
-
-			var perma = $(this).attr('rel'),
-				postid = $(this).attr('id'),
-				postitle = $(this).attr('title');
-
-			$(this).parent().parent().addClass('loader');
-
-			$post.load(perma + ' #post', function () {
-				$gopost.fadeOut(300);
-				$archive.hide('slide', {
-					direction: 'right'
-				}, 600, function () {
-					$post.scrollTop(1);
-					$goarchive.fadeIn(300);
-					$post.show('slide', {
-						direction: 'left'
-					}, 600, function () {
-						$('#' + postid).parent().parent().removeClass('loader');
-						window.location.hash = '/' + postitle;
-						if (typeof twttr != 'undefined') {
-							twttr.widgets.load()
-						}
-					});
-				});
-			});
-		}
-
-		$goarchive.on('click',$goarchive,goarchive);
-
-		$gopost.on('click',$gopost,gopost);
-
-		$archive.find('a').on('click',$archive.find('a'),loadpost);
-
-
-		/* arrow key blognav */
-
-		$(document).keydown(function(ev) {
-			if(ev.which === 39) {
-				if ( $post.is(':visible') ) {
-					goarchive();
-				}
-				return false;
-			}
-
-			if(ev.which === 37) {
-				if ( $archive.is(':visible') ) {
-					gopost();
-				}
-				return false;
-			}
-		});
-		$("html").swipe({
-		  swipeRight:function(event, direction, distance, duration, fingerCount) {
-		    if ( $archive.is(':visible') ) {
-					gopost();
-				}
-				return false;
-		    //This only fires when the user swipes left
-		  },
-		  swipeLeft:function(event, direction, distance, duration, fingerCount) {
-		    if ( $post.is(':visible') ) {
-					goarchive();
-				}
-				return false;;
-		    //This only fires when the user swipes right
-		  }
-		});
-		$(window).scroll(function() {
-			var scrollMargin = 15
-		   if($(window).scrollTop() < scrollMargin 
-		   	|| $(document).height() - ($(window).scrollTop() + $(window).height()) < scrollMargin) {
-		       // show the scroll
-		   		$("#goarchive").addClass("slideleftborder");
-		   		$("#gopost").addClass("sliderightborder")
-		   } else {
-		   		$("#goarchive").removeClass("slideleftborder");
-		   		$("#gopost").removeClass("sliderightborder")
-			}
-		});
-		$(window).scrollTop(1);
-	});
-
-</script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/index.js"></script>
 
 <?php wp_footer(); ?>
 
