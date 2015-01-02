@@ -27,11 +27,50 @@ body {
 	font-family: sans-serif;
 	margin: 0px;
 	padding: 0 7%;
-	color: #222;
-	background: #eee;
 	position: relative;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
+}
+
+/*
+	Style classes:
+		bindle: black-on-teal basic theme
+		inverted: white-on-dark-blue theme
+		fauxpas: craaazy stuff
+*/
+
+#inverted, .btn-theme#theme-inverted {
+	background: linear-gradient(45deg, #555, #233) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border-color: rgba(255,255,255,0.1);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}
+
+#inverted span {
+	color: #ddd;
+}
+#inverted a {
+	color:#9CA0AB;
+}
+#inverted a:hover {
+	color:#C2CDEF;
+}
+
+#bindle, .btn-theme#theme-bindle, #bindle span {
+	color: #222;
+	border-color: rgba(0,0,0,0.1);
+	background: linear-gradient(45deg, #eee, #ddd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	
+}
+
+.btn-theme#theme-fauxpas, #fauxpas p, #fauxpas li, #fauxpas h1, #fauxpas h2, #fauxpas h3, #fauxpas a, #fauxpas span {
+  border-color: rgba(0,0,0,0.1);
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  cursor:url('http://media.tumblr.com/tumblr_lxtjzvOhD01qi3wh2.gif'), auto;
 }
 
 a {
@@ -62,7 +101,7 @@ h2 {
 }
 
 blockquote {
-	border-left: 0px solid rgba(0,0,0,0.1);
+	border-left: 0px solid;
 	padding: 0 0 0 18px;
 	margin: 0 0 22px 0;
 }
@@ -169,6 +208,44 @@ nav a:hover {
 	opacity: 0.9;
 	margin: .8em 0;
 	padding: 0;
+}
+
+#themechoice {
+	margin-top:.5em;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-theme {
+	cursor:default;
+	margin: 0 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.2);
+	border-radius: .25em;
+	padding: 2px 10px;
+}
+
+.btn-theme#theme-bindle:hover {
+	background: linear-gradient(45deg, #777, #655) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}
+
+.btn-theme#theme-inverted:hover {
+	background: linear-gradient(45deg, #777, #655) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}
+
+.btn-theme#theme-fauxpas {
+  background: linear-gradient(45deg, #f22, #f2f, #22f, #2ff, #2f2, #ff2, #f22) repeat scroll 0 0 rgba(0, 0, 0, 0);;
+  color:#fff;
+}
+
+.btn-theme#theme-fauxpas:hover {
+  background: linear-gradient(45deg, #f22, #f22, #f2f, #22f, #2ff, #2f2, #ff2) repeat scroll 0 0 rgba(0, 0, 0, 0);;
+  color:#fff;
 }
 
 /*

@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="bindle">
 
 <a class="shift" id="goarchive"><span class="vertcenter">&raquo;</span></a>
 <a class="shift sliderightborder" id="gopost"><span class="vertcenter">&laquo;</span></a>
@@ -52,21 +52,30 @@
 	        <div class="links">
 	            <?php
 	            if(has_previous_posts()) {
-	            	previous_post_link('<div class="prev">previous: %link</div>');
+	            	previous_post_link('<div class="prev"><span>previous: %link</span></div>');
 	            } ?>
 	            <?php
 	            if(has_next_posts()) {
-	             	next_post_link('<div class="next">next: %link</div>');
+	             	next_post_link('<div class="next"><span>next: %link</span></div>');
 	            }
 	            ?>
 			</div>
         </div>
 
 		<div id="footer" class="sticky">
-			btw: jacke can be
-				<a href="http://music.karashae.com">heard</a>,
-				<a href="http://www.youtube.com/jackekarashae">seen</a>, or
-				<a href="http://twitter.com/jackekarashae">followed</a>!
+			<div id="footer-link">
+				<span>
+					btw: jacke can be
+						<a href="http://music.karashae.com">heard</a>,
+						<a href="http://www.youtube.com/jackekarashae">seen</a>, or
+						<a href="http://twitter.com/jackekarashae">followed</a>!
+				</span>
+			</div>
+			<div id="themechoice">
+				<div class="btn-theme" id="theme-bindle" data-theme="bindle">light</div>
+				<div class="btn-theme" id="theme-inverted" data-theme="inverted">dark</div>
+				<div class="btn-theme" id="theme-fauxpas" data-theme="fauxpas">faux pas</div>
+			</div>
 		</div>
 	</li>
 
@@ -90,8 +99,8 @@
 </ul>
 
 
-
-<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/jquery.touchSwipe.min.js"></script>
+<script src="https://raw.github.com/TimPietrusky/background-clip-text-polyfill/master/background-clip-text-polyfill.js"></script>
+<!--<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/jquery.touchSwipe.min.js"></script>-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/index.js"></script>
 
 <?php wp_footer(); ?>

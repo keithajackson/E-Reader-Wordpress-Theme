@@ -83,21 +83,25 @@ $(document).ready(function () {
 			return false;
 		}
 	});
-	$("html").swipe({
-	  swipeRight:function(event, direction, distance, duration, fingerCount) {
-	    if ( $archive.is(':visible') ) {
-				gopost();
-			}
-			return false;
-	    //This only fires when the user swipes left
-	  },
-	  swipeLeft:function(event, direction, distance, duration, fingerCount) {
-	    if ( $post.is(':visible') ) {
-				goarchive();
-			}
-			return false;;
+	$("html").on("swipeleft", function() {
+		if ( $archive.is(':visible') ) {
+			gopost();
+		}
+		return false;
+		//This only fires when the user swipes left
+	});
+	$("html").on("swiperight", function() {
+		if ( $post.is(':visible') ) {
+			goarchive();
+		}
+		return false;;
 	    //This only fires when the user swipes right
-	  }
+	});
+	$(".btn-theme").on("click", function() {
+		$("body").attr("id", $(this).data("theme"));
+		// store the current theme for future reference
+		localStorage.setItem("blog-theme", $(this).data("theme"));
+
 	});
 	$(window).scroll(function() {
 		var scrollMargin = 15
@@ -110,4 +114,23 @@ $(document).ready(function () {
 		}
 	});
 	$(window).scrollTop(1);
+	// change theme if it is not the default
+	if(localStorage.getItem("blog-theme") != null) {
+		$("body").attr("id", localStorage.getItem("blog-theme"));
+	}
+
+	var element = document.querySelector('#fauxpas'); 
+
+	/*
+	 * Call the polyfill
+	 *
+	 * patternID : the unique ID of the SVG pattern
+	 * patternURL : the URL to the background-image
+	 * class : the css-class applied to the SVG
+	 */
+	element.backgroundClipPolyfill({
+	  'patternID' : 'mypattern',
+	  'patternURL' : 'url/to/background/pattern',
+	  'class' : 'myelement'
+	});
 });
