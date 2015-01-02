@@ -46,6 +46,38 @@ body {
 	text-shadow: 0, -1px, 0, #000;
 }
 
+.fauxpas {
+	display:none;
+}
+
+#fauxpas .fauxpas {
+	display:block;
+}
+#fauxpas .non-fauxpas {
+	display:none;
+}
+#fauxpas-name {
+	font-size:4em;
+	height:1em;
+}
+#fauxpas-fire {
+	position:fixed;
+	left: 0;
+	top: 0;
+	width:20%;
+	z-index: -1;
+}
+#fauxpas-dino {
+	position:fixed;
+	right: 0;
+	top: 0;
+	width:20%;
+	z-index: -1;
+}
+#fauxpas-footer {
+	margin-top:1em;
+}
+
 #inverted span {
 	color: #ddd;
 }
@@ -216,8 +248,11 @@ nav a:hover {
 #themechoice {
 	margin-top:.5em;
 	display:flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	display:-webkit-flex;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
 }
 .btn-theme {
 	cursor:default;
@@ -278,7 +313,8 @@ nav a:hover {
 	color: rgba(0,0,0,0.2);
 	border-right: 1px solid rgba(0,0,0,0);
 	padding-right:1%;
-	left: 1%;
+	left:0;
+	padding-left: 1%;
 	display: none;
 }
 
@@ -291,7 +327,8 @@ nav a:hover {
 	color: rgba(0,0,0,0.2);
 	border-left: 1px solid rgba(0,0,0,0);
 	padding-left:1%;
-	right: 1%;
+	right:0;
+	padding-right: 1%;
 }
 #goarchive.slideleftborder, #goarchive:hover {
 	color: rgba(0,0,0,0.5);
@@ -392,6 +429,7 @@ ul#content-container > li {
 
 @media all and (min-width:768px) {
 	#post .links {
+		display:-webkit-flex;
 		display:flex;
 	}
 	#post .prev {

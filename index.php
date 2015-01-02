@@ -15,23 +15,25 @@
 		var hashtourl = hash.substring(2)
 		window.location.href = "/"+hashtourl;
 	}
+	php_src = "<?php echo get_template_directory_uri();?>";
 </script>
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> id="bindle">
-
 <a class="shift" id="goarchive"><span class="vertcenter">&raquo;</span></a>
 <a class="shift sliderightborder" id="gopost"><span class="vertcenter">&laquo;</span></a>
 
 <div id="blogheader" class="sticky">
-	<h1>
+	<h1 class="non-fauxpas">
 		<?php echo get_bloginfo('name');?>
 	</h1>
-	<h2>
+	<h2 class="non-fauxpas">
 		<?php echo get_bloginfo('description'); ?>
 	</h2>
+	<marquee class="fauxpas" id="fauxpas-name" direction="down">jacke karashae on the www</marquee>
+	<marquee class="fauxpas" id="fauxpas-desc" behavior="alternate">all those sundry things jacke does on the information superhighway.</marquee>
 	<!--<div id="blognav">
 	    <nav>
 	        <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
@@ -76,6 +78,11 @@
 				<div class="btn-theme" id="theme-inverted" data-theme="inverted">dark</div>
 				<div class="btn-theme" id="theme-fauxpas" data-theme="fauxpas">faux pas</div>
 			</div>
+			<div class="fauxpas" id="fauxpas-footer">
+				<img src="<?php echo get_template_directory_uri();?>/ie.gif" />
+				<img src="<?php echo get_template_directory_uri();?>/netscape.gif" />
+				<img src="<?php echo get_template_directory_uri();?>/cag.gif" />
+			</div>
 		</div>
 	</li>
 
@@ -92,15 +99,11 @@
 					<li><h2><a href="<?php the_permalink(); ?>" id="<?php the_id(); ?>" title="<?php echo( basename( get_permalink() ) ); ?>"><?php the_title(); ?></a></h2> <span><?php the_time('F j Y') ?></span></li>
 				<?php endwhile; wp_reset_postdata(); ?>
 			</ul>
-
 		</div>
 
 	</li>
 </ul>
 
-
-<script src="https://raw.github.com/TimPietrusky/background-clip-text-polyfill/master/background-clip-text-polyfill.js"></script>
-<!--<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/jquery.touchSwipe.min.js"></script>-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/index.js"></script>
 
 <?php wp_footer(); ?>

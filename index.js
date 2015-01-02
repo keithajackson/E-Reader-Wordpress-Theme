@@ -59,6 +59,18 @@ $(document).ready(function () {
 		});
 	}
 
+	function chmod(newmod) {
+		$("body").attr("id", newmod);
+		$(".fauxpas-inject").remove();
+		if(newmod == "fauxpas") {
+			// add audio
+			$("body").append('<audio class="fauxpas-inject" src="' + php_src + '/hotmk.mp3" autoplay="true" loop="true"></audio>');
+			// add images
+			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/dino.gif" id="fauxpas-dino"></audio>');
+			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/fire.gif" id="fauxpas-fire"></audio>');
+		}
+	}
+
 	$goarchive.on('click',$goarchive,goarchive);
 
 	$gopost.on('click',$gopost,gopost);
@@ -98,7 +110,7 @@ $(document).ready(function () {
 	    //This only fires when the user swipes right
 	});
 	$(".btn-theme").on("click", function() {
-		$("body").attr("id", $(this).data("theme"));
+		chmod($(this).data("theme"));
 		// store the current theme for future reference
 		localStorage.setItem("blog-theme", $(this).data("theme"));
 
@@ -116,8 +128,7 @@ $(document).ready(function () {
 	$(window).scrollTop(1);
 	// change theme if it is not the default
 	if(localStorage.getItem("blog-theme") != null) {
-		$("body").attr("id", localStorage.getItem("blog-theme"));
+		chmod(localStorage.getItem("blog-theme"));
 	}
 
-	
 });
