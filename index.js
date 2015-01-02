@@ -119,18 +119,5 @@ $(document).ready(function () {
 		$("body").attr("id", localStorage.getItem("blog-theme"));
 	}
 
-	var element = document.querySelector('#fauxpas'); 
-
-	/*
-	 * Call the polyfill
-	 *
-	 * patternID : the unique ID of the SVG pattern
-	 * patternURL : the URL to the background-image
-	 * class : the css-class applied to the SVG
-	 */
-	element.backgroundClipPolyfill({
-	  'patternID' : 'mypattern',
-	  'patternURL' : 'url/to/background/pattern',
-	  'class' : 'myelement'
-	});
+	
 });
