@@ -49,7 +49,9 @@ body {
 .fauxpas {
 	display:none;
 }
-
+#fauxpas #post, #fauxpas #blogheader, #fauxpas #footer {
+	z-index:1;
+}
 #fauxpas .fauxpas {
 	display:block;
 }
@@ -60,19 +62,17 @@ body {
 	font-size:4em;
 	height:1em;
 }
-#fauxpas-fire {
-	position:fixed;
-	left: 0;
-	top: 0;
-	width:20%;
-	z-index: -1;
-}
 #fauxpas-dino {
 	position:fixed;
-	right: 0;
-	top: 0;
-	width:20%;
-	z-index: -1;
+	left: 5%;
+	bottom: 0;
+	width:10%;
+}
+#fauxpas-fire {
+	position:fixed;
+	right: 5%;
+	bottom: 0;
+	width:10%;
 }
 #fauxpas-footer {
 	margin-top:1em;
