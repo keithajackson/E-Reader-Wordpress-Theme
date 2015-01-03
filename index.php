@@ -7,7 +7,7 @@
 <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
 
-<link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo get_template_directory_uri(); ?>/css/main.min.css" rel="stylesheet" type="text/css" />
 
 <script>
 	if(window.location.hash) {
@@ -79,9 +79,9 @@
 				<div class="btn-theme" id="theme-fauxpas" data-theme="fauxpas">faux pas</div>
 			</div>
 			<div class="fauxpas" id="fauxpas-footer">
-				<img src="<?php echo get_template_directory_uri();?>/ie.gif" />
-				<img src="<?php echo get_template_directory_uri();?>/netscape.gif" />
-				<img src="<?php echo get_template_directory_uri();?>/cag.gif" />
+				<img src="<?php echo get_template_directory_uri();?>/img/ie.gif" />
+				<img src="<?php echo get_template_directory_uri();?>/img/netscape.gif" />
+				<img src="<?php echo get_template_directory_uri();?>/img/cag.gif" />
 			</div>
 		</div>
 	</li>
@@ -104,7 +104,7 @@
 	</li>
 </ul>
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/index.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/main.min.js"></script>
 
 <?php wp_footer(); ?>
 

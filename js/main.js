@@ -16,7 +16,7 @@ $(document).ready(function () {
 			}, 600);
 			$gopost.fadeIn(300);
 		});
-	};
+	}
 
 	function gopost() {
 		$gopost.fadeOut(300);
@@ -29,7 +29,7 @@ $(document).ready(function () {
 			}, 600);
 			$goarchive.fadeIn(300);
 		});
-	};
+	}
 
 	function loadpost() {
 
@@ -51,8 +51,8 @@ $(document).ready(function () {
 				}, 600, function () {
 					$('#' + postid).parent().parent().removeClass('loader');
 					window.location.hash = '/' + postitle;
-					if (typeof twttr != 'undefined') {
-						twttr.widgets.load()
+					if (typeof twttr !== 'undefined') {
+						twttr.widgets.load();
 					}
 				});
 			});
@@ -62,12 +62,12 @@ $(document).ready(function () {
 	function chmod(newmod) {
 		$("body").attr("id", newmod);
 		$(".fauxpas-inject").remove();
-		if(newmod == "fauxpas") {
+		if(newmod === "fauxpas") {
 			// add audio
-			$("body").append('<audio class="fauxpas-inject" src="' + php_src + '/hotmk.mp3" autoplay="true" loop="true"></audio>');
+			$("body").append('<audio class="fauxpas-inject" src="' + php_src + '/media/hotmk.mp3" autoplay="true" loop="true"></audio>');
 			// add images
-			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/dino.gif" id="fauxpas-dino"></audio>');
-			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/fire.gif" id="fauxpas-fire"></audio>');
+			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/img/dino.gif" id="fauxpas-dino"></audio>');
+			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/img/fire.gif" id="fauxpas-fire"></audio>');
 		}
 	}
 
@@ -106,7 +106,7 @@ $(document).ready(function () {
 		if ( $post.is(':visible') ) {
 			goarchive();
 		}
-		return false;;
+		return false;
 	    //This only fires when the user swipes right
 	});
 	$(".btn-theme").on("click", function() {
@@ -116,9 +116,8 @@ $(document).ready(function () {
 
 	});
 	$(window).scroll(function() {
-		var scrollMargin = 15
-	   if($(window).scrollTop() < scrollMargin 
-	   	|| $(document).height() - ($(window).scrollTop() + $(window).height()) < scrollMargin) {
+		var scrollMargin = 15;
+	   if($(window).scrollTop() < scrollMargin || $(document).height() - ($(window).scrollTop() + $(window).height()) < scrollMargin) {
 	       // show the scroll
 	   		$("#goarchive").addClass("slideleftborder");
 	   } else {
