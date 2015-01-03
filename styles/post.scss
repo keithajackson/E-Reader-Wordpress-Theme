@@ -1,0 +1,50 @@
+#post .content {
+	border-bottom: 3px solid rgba(0,0,0,0.1);
+}
+
+#post ol, #post ul {
+	line-height:1.5em;
+	margin: 0 .5em;
+	padding-bottom: 0;
+}
+#post li {
+	padding-bottom:.5em;
+}
+
+#post h1 {
+	text-align: center;
+	font-family: 'Alegreya', serif;
+	margin-bottom: .3em;
+}
+
+#post h2 {
+	font-weight: bold;
+	text-align:center;
+}
+
+#post .links-hr {
+	width:90%;
+	margin: 1em auto;
+	border-top: 3px double rgba(0,0,0,0.1);
+}
+
+#post .links {
+	display:block;
+	margin-bottom:.8em;
+	justify-content:space-around;
+	text-align: center;
+	font-style: italic;
+}
+#post .prev {
+	margin-bottom:1.5em;
+}
+
+@media all and (min-width:768px) {
+	#post .links {
+		display:-webkit-flex;
+		display:flex;
+	}
+	#post .prev {
+		margin-bottom: 0;
+	}
+}

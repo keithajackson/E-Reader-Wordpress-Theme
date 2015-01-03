@@ -1,0 +1,22 @@
+#inverted, .btn-theme#theme-inverted {
+	background: linear-gradient(45deg, #555, #233) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border-color: rgba(255,255,255,0.1);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}
+
+#inverted span {
+	color: #ddd;
+}
+#inverted a {
+	color:#9CA0AB;
+}
+#inverted a:hover {
+	color:#C2CDEF;
+}
+
+.btn-theme#theme-inverted:hover {
+	background: linear-gradient(45deg, #777, #655) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}

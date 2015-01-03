@@ -24,11 +24,11 @@ gulp.task('styles', function() {
   return gulp.src('styles/main.scss')
     .pipe(sass({ style: 'expanded', }))
     //.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest(server_root + 'css'))
+//    .pipe(gulp.dest(server_root + 'css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(gulp.dest(server_root + 'css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+//    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Scripts
@@ -37,11 +37,11 @@ gulp.task('scripts', function() {
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(server_root + 'js'))
+//    .pipe(gulp.dest(server_root + 'js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest(server_root + 'js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+//    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Images
@@ -49,7 +49,7 @@ gulp.task('images', function() {
   return gulp.src('images/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest(server_root + 'img'))
-    .pipe(notify({ message: 'Images task complete' }));
+//    .pipe(notify({ message: 'Images task complete' }));
 });
 
 // php minify

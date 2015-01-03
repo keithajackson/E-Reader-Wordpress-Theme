@@ -1,0 +1,54 @@
+.fauxpas {
+	display:none;
+}
+#fauxpas #post, #fauxpas #blogheader, #fauxpas #footer {
+	z-index:1;
+}
+#fauxpas .fauxpas {
+	display:block;
+}
+#fauxpas .non-fauxpas {
+	display:none;
+}
+#fauxpas-name {
+	font-size:4em;
+	height:1em;
+}
+#fauxpas-dino {
+	position:fixed;
+	left: 5%;
+	bottom: 0;
+	width:10%;
+}
+#fauxpas-fire {
+	position:fixed;
+	right: 5%;
+	bottom: 0;
+	width:10%;
+}
+#fauxpas-footer {
+	margin-top:1em;
+}
+
+body#fauxpas, #fauxpas #blogheader, #fauxpas #post h1, #fauxpas #footer #h2 {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body#fauxpas {
+  background: linear-gradient(45deg, #f22, #f22, #f2f, #22f, #2ff, #2f2, #ff2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#fauxpas, .btn-theme#theme-fauxpas, #fauxpas p, #fauxpas li, #fauxpas h1, #fauxpas h2, #fauxpas h3, #fauxpas a, #fauxpas span {
+  border-color: rgba(0,0,0,0.1);
+  color: #fff;
+  cursor:url('http://media.tumblr.com/tumblr_lxtjzvOhD01qi3wh2.gif'), auto;
+}
+
+.btn-theme#theme-fauxpas {
+  background: linear-gradient(45deg, #f22, #f2f, #22f, #2ff, #2f2, #ff2, #f22) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color:#fff;
+}
+
+.btn-theme#theme-fauxpas:hover {
+  background: linear-gradient(45deg, #f22, #f22, #f2f, #22f, #2ff, #2f2, #ff2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color:#fff;
+}

@@ -1,0 +1,30 @@
+#archive h2 {
+	font-family: 'Alegreya', serif;
+	font-weight: normal;
+}
+
+#archive {
+	display: none;
+}
+
+#archive ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#archive li {
+	padding: 12px 4px;
+	margin: 0;
+	list-style: none;
+	font-size: 12px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#archive li:last-child {
+	border: none;
+}
+
+#archive li span {
+	text-transform: uppercase;
+}

@@ -1,6 +1,6 @@
 if(window.location.hash) {
 	var hash = window.location.hash;
-	var hashtourl = hash.substring(2)
+	var hashtourl = hash.substring(2);
 	window.location.href = "/"+hashtourl;
 }
 $(document).ready(function () {
@@ -37,7 +37,6 @@ $(document).ready(function () {
 	}
 
 	function loadpost() {
-
 		var perma = $(this).attr('rel'),
 			postid = $(this).attr('id'),
 			postitle = $(this).attr('title');

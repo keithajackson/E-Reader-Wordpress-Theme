@@ -1,0 +1,45 @@
+.shift {
+	font-size: 1em;
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	height:100%;
+}
+
+.vertcenter {
+	top:45%;
+	position:relative;
+}
+
+#gopost {
+	color: rgba(0,0,0,0.2);
+	border-right: 1px solid rgba(0,0,0,0);
+	padding-right:1%;
+	left:0;
+	padding-left: 1%;
+	display: none;
+}
+
+#gopost.sliderightborder, #gopost:hover {
+	color: rgba(0,0,0,0.5);
+	border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+#goarchive {
+	color: rgba(0,0,0,0.2);
+	border-left: 1px solid rgba(0,0,0,0);
+	padding-left:1%;
+	right:0;
+	padding-right: 1%;
+}
+#goarchive.slideleftborder, #goarchive:hover {
+	color: rgba(0,0,0,0.5);
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+#goarchive, #gopost, .slideleftborder, .sliderightborder {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}

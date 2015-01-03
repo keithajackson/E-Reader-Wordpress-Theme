@@ -1,0 +1,11 @@
+#bindle, .btn-theme#theme-bindle, #bindle span {
+	color: #222;
+	border-color: rgba(0,0,0,0.1);
+	background: linear-gradient(45deg, #eee, #ddd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	
+}
+.btn-theme#theme-bindle:hover {
+	background: linear-gradient(45deg, #777, #655) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #ddd;
+	text-shadow: 0, -1px, 0, #000;
+}
