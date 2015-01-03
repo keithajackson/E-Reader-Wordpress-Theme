@@ -65,7 +65,10 @@ gulp.task('copy-media', function(){
 
 // Clean
 gulp.task('clean', function(cb) {
-    del(['css', 'js', 'img'], cb)
+  del(['out/*'], function (err, deletedFiles) {
+    console.log('Files deleted:', deletedFiles.join(', '));
+    cb();
+  });
 });
 
 // Default task
