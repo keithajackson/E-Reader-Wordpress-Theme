@@ -10,18 +10,13 @@
 <link href="<?php echo get_template_directory_uri(); ?>/css/main.min.css" rel="stylesheet" type="text/css" />
 
 <script>
-	if(window.location.hash) {
-		var hash = window.location.hash;
-		var hashtourl = hash.substring(2)
-		window.location.href = "/"+hashtourl;
-	}
 	php_src = "<?php echo get_template_directory_uri();?>";
 </script>
 
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> id="bindle">
+<body  id="bindle" <?php body_class(); ?>>
 <a class="shift" id="goarchive"><span class="vertcenter">&raquo;</span></a>
 <a class="shift sliderightborder" id="gopost"><span class="vertcenter">&laquo;</span></a>
 

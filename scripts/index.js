@@ -1,3 +1,8 @@
+if(window.location.hash) {
+	var hash = window.location.hash;
+	var hashtourl = hash.substring(2)
+	window.location.href = "/"+hashtourl;
+}
 $(document).ready(function () {
 	// Cached DOM references
 	var $goarchive = $('#goarchive'),
@@ -62,12 +67,16 @@ $(document).ready(function () {
 	function chmod(newmod) {
 		$("body").attr("id", newmod);
 		$(".fauxpas-inject").remove();
+		$("#fauxpas-footer img").remove();
 		if(newmod === "fauxpas") {
 			// add audio
 			$("body").append('<audio class="fauxpas-inject" src="' + php_src + '/media/hotmk.mp3" autoplay="true" loop="true"></audio>');
 			// add images
 			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/img/dino.gif" id="fauxpas-dino"></audio>');
 			$("body").append('<img class="fauxpas-inject" src="' + php_src + '/img/fire.gif" id="fauxpas-fire"></audio>');
+			$("#fauxpas-footer").append('<img src="' + php_src + '/img/ie.gif"/>');
+			$("#fauxpas-footer").append('<img src="' + php_src + '/img/netscape.gif"/>');
+			$("#fauxpas-footer").append('<img src="' + php_src + '/img/cag.gif"/>');
 		}
 	}
 
