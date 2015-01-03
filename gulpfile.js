@@ -27,8 +27,9 @@ gulp.task('styles', function() {
 //    .pipe(gulp.dest(server_root + 'css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
+//    .pipe(minifycss({keepBreaks:true}))
     .pipe(gulp.dest(server_root + 'css'))
-//    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Scripts

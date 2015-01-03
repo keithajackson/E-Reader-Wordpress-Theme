@@ -8,12 +8,12 @@
 
 #themechoice {
 	margin-top:.5em;
-	display:flex;
-	align-items: center;
-	justify-content: center;
 	display: -webkit-flex;
 	-webkit-justify-content: center;
 	-webkit-align-items: center;
+	display:flex;
+	align-items: center;
+	justify-content: center;
 }
 .btn-theme {
 	cursor:default;
