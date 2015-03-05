@@ -55,7 +55,7 @@ gulp.task('images', function() {
 
 // php minify
 gulp.task('copy-php', function() {
-  gulp.src('*.php')
+  gulp.src(['*.php', 'style.css'])
     .pipe(gulp.dest(server_root))
 });
 
@@ -89,10 +89,7 @@ gulp.task('watch', function() {
   // Watch image files
   gulp.watch('images/*', ['images']);
 
-  // Create LiveReload server
-  livereload.listen();
+  gulp.watch('*.php', ['copy-php']);
 
-  // Watch any files in dist/, reload on change
-  gulp.watch([server_root]).on('change', livereload.changed);
-
+  gulp.watch('media/*', ['copy-media']);
 });
